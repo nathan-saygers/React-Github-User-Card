@@ -1,10 +1,11 @@
 import React from 'react';
 import FollowerCard from './FollowerCard';
+import styled from 'styled-components';
 
 const FollowerList = props => {
 
   return (
-    <div>
+    <FollowerListContainer>
       {props.followerData.map( follower =>
         <FollowerCard 
           avatar={follower.avatar_url}
@@ -12,8 +13,15 @@ const FollowerList = props => {
           githubLink={follower.html_url}
         />
       )}
-    </div>
+    </FollowerListContainer>
   )
 }
 
 export default FollowerList;
+
+const FollowerListContainer = styled.div`
+  display: flex;
+  flex-wrap: wrap;
+  height: 40rem;
+  border: gray 2px solid;
+`

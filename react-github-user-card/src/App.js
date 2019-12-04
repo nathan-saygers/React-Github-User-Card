@@ -3,6 +3,7 @@ import './App.css';
 import axios from 'axios';
 import User from './components/User'
 import FollowerList from './components/FollowerList';
+import styled from 'styled-components';
 
 class App extends React.Component {
   constructor() {
@@ -28,12 +29,16 @@ class App extends React.Component {
 
   render () {
     return (
-      <div>
+      <Wrapper>
         <User userData={this.state.user}/>
         <FollowerList followerData={this.state.followers}/>
-      </div>
+      </Wrapper>
     );
   }
 }
 
 export default App;
+
+const Wrapper = styled.div`
+  display: flex;
+`
